@@ -1,0 +1,59 @@
+.message-card {
+  width: 80%;
+  border: 1px solid rgb(216, 216, 216);
+  box-shadow: 2px 2px 2px;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: rgb(143, 195, 187);
+}
+
+.message-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.user-info {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.comment-body {
+  margin: 10px;
+}
+
+.actions button {
+  margin-left: 5px;
+}
+
+.customBtn {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+#newProgramBtn {
+  border-radius: 5px;
+  background: linear-gradient(to right, hsl(200, 60%, 50%), hsl(230, 80%, 80%));
+  border: 0;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  box-shadow: 1px 2px 2px 2px;
+  cursor: pointer;
+}
+
+#addBtn {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  background-color: rgb(109, 109, 240);
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}

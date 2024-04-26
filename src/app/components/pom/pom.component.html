@@ -1,0 +1,42 @@
+<div class="flex mt-3">
+  <div *ngFor="let permission of permissions">
+    <span
+      style="
+        background-color: blue;
+        border-radius: 5px;
+        color: white;
+        margin: 3px;
+        padding: 5px;
+      "
+    >
+      {{ permission }}
+      <a (click)="removePermission(permission)" style="cursor: pointer"
+        ><i class="pi pi-fw pi-times my-icon"></i
+      ></a>
+    </span>
+  </div>
+</div>
+
+<div class="card flex justify-content-center">
+  <p-dropdown
+    [options]="allPermissions"
+    [(ngModel)]="selectedPermission"
+    placeholder="Select a City"
+    [editable]="true"
+    optionLabel="name"
+    showClear="true"
+    (onChange)="addPermission()"
+  ></p-dropdown>
+</div>
+
+<div class="card flex justify-content-center">
+  <p-dropdown
+    [options]="roles"
+    [(ngModel)]="selectedRole"
+    placeholder="Select a role"
+    [editable]="true"
+    optionLabel="name"
+    showClear="true"
+    (onChange)="addPermission()"
+  ></p-dropdown>
+</div>

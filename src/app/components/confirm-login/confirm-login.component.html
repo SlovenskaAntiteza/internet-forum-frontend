@@ -1,0 +1,40 @@
+<div class="flex justify-content-center align-items-center h-full">
+  <form
+    [formGroup]="confirmLoginForm"
+    (ngSubmit)="submit()"
+    style="width: 365px"
+  >
+    <p-card id="login-card" header="Confirm login process">
+      <div class="field">
+        <label for="verificationCode">Verification code</label>
+        <input
+          type="text"
+          pInputText
+          formControlName="verificationCode"
+          class="w-full"
+          name="verificationCode"
+          id="verificationCode"
+          placeholder="Enter verification code"
+        />
+        <small
+          *ngIf="
+            verificationCode.invalid &&
+            (verificationCode.dirty || verificationCode.touched)
+          "
+          class="block p-error"
+        >
+          <div *ngIf="verificationCode.errors?.['required']">
+            Verification code is required
+          </div>
+        </small>
+      </div>
+      <p-button
+        label="Send code"
+        styleClass="w-full"
+        [disabled]="confirmLoginForm.invalid"
+        type="ngSubmit"
+      ></p-button>
+      <div class="mt-2">Return to login! <a routerLink="/login">Login</a></div>
+    </p-card>
+  </form>
+</div>

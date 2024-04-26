@@ -1,0 +1,22 @@
+<div
+  class="flex justify-content-center mt-3 mb-3 text-teal-500 text-5xl font-bold"
+>
+  Forums
+</div>
+
+<div class="flex-column">
+  <div class="flex justify-content-center" *ngFor="let forum of forums">
+    <div class="message-card">
+      <div class="flex justify-content-between">
+        <div style="font-size: 25px; font-weight: 700">
+          {{ forum.name }}
+        </div>
+        <div>
+          <button id="customBtn" (click)="enterArea(forum)">
+            Enter this area
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

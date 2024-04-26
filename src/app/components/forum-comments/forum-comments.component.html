@@ -1,0 +1,95 @@
+<div
+  class="flex justify-content-center mt-3 mb-3 text-teal-500 text-5xl font-bold"
+>
+  Comments
+</div>
+
+<div class="flex-column">
+  <div class="flex justify-content-center mb-3">
+    <div style="width: 80%" *ngIf="hasAddCommentPermission()">
+      <button id="newProgramBtn" (click)="showAddModule()">
+        <i class="pi pi-plus"></i> New comment
+      </button>
+    </div>
+  </div>
+  <div class="flex justify-content-center" *ngFor="let comment of comments">
+    <div class="message-card">
+      <div class="user-info">
+        <div>{{ comment?.user?.firstName }} {{ comment?.user?.lastName }}</div>
+      </div>
+      <div class="comment-body">
+        {{ comment?.comment }}
+      </div>
+      <div class="flex actions justify-content-between mt-3">
+        <!-- Dodajte gumbi ovdje -->
+        <div>
+          <button
+            *ngIf="hasDeleteCommentPermission()"
+            class="customBtn"
+            style="background-color: rgb(236, 108, 108)"
+            (click)="deleteComment(comment)"
+          >
+            Delete
+            <i style="margin-left: 3px" class="pi pi-fw pi-times"></i>
+          </button>
+          <button
+            *ngIf="hasEditCommentPermission()"
+            class="customBtn"
+            style="background-color: rgb(112, 112, 244)"
+            (click)="showEditModule(comment)"
+          >
+            Edit
+            <i style="margin-left: 3px" class="pi pi-fw pi-file-edit"></i>
+          </button>
+        </div>
+        <div>
+          {{ comment?.date | date : "dd MMM yyyy" }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card flex justify-content-center">
+  <p-dialog
+    header="Add comment"
+    [(visible)]="visibleAddModule"
+    [style]="{ width: '50vw' }"
+  >
+    <div class="flex py-2 justify-content-center">
+      <textarea
+        rows="6"
+        pInputTextarea
+        [style]="{ width: '90%' }"
+        [(ngModel)]="enteredComment"
+      ></textarea>
+    </div>
+    <div class="flex justify-content-center py-2">
+      <button id="addBtn" (click)="addComment()" class="btn btn-primary">
+        Send
+      </button>
+    </div>
+  </p-dialog>
+</div>
+
+<div class="card flex justify-content-center">
+  <p-dialog
+    header="Edit comment"
+    [(visible)]="visibleEditModule"
+    [style]="{ width: '50vw' }"
+  >
+    <div class="flex py-2 justify-content-center">
+      <textarea
+        rows="6"
+        pInputTextarea
+        [style]="{ width: '90%' }"
+        [(ngModel)]="commentToEdit"
+      ></textarea>
+    </div>
+    <div class="flex justify-content-center py-2">
+      <button id="addBtn" (click)="editComment()" class="btn btn-primary">
+        Edit
+      </button>
+    </div>
+  </p-dialog>
+</div>

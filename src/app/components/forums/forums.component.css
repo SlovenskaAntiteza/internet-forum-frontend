@@ -1,0 +1,20 @@
+.message-card {
+  width: 80%;
+  border: 1px solid rgb(216, 216, 216);
+  box-shadow: 2px 2px 2px;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: rgb(143, 195, 187);
+}
+
+#customBtn {
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(217, 71, 71);
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
